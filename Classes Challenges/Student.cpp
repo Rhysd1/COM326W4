@@ -34,7 +34,12 @@ Student::Student(std::string name, std::string registration, std::string course,
 	//we could assign the values of the parameters to the data members like this
 	//name_ = name;
 };
+Student::Student(std::string name, std::string registration, std::string course, int yearofStudy, int module1, int module2, int module3)
+	: name_{ name }, registrstionID_{ registration }, course_{ course },
+	yearofStudy_{ yearofStudy }, moduleOneMark_{ module1 }, moduleTwoMark_{ module2 }, moduleThreeMark_{ module3 } 
+{
 
+};
 
 //Getters and setters
 void Student::SetName(std::string name) {
@@ -68,9 +73,9 @@ int Student::GetYearofStudy() const {
 }
 
 void Student::ToString() const {
-	std::string output = name_ + " " + registrstionID_ + " " + course_ + " " + std::to_string(yearofStudy_) + " " + "\n";
-		//+ std::to_string(moduleOneMark_) + " " + std::to_string(moduleTwoMark_) + " " + std::to_string(moduleThreeMark_) + "\n";
-	//+yearofStudy_ + " " + moduleOneMark_ + " "	+ moduleTwoMark_ + " " + moduleThreeMark_;
+	std::string output = name_ + " " + registrstionID_ + " " + course_ + " " + std::to_string(yearofStudy_) + " " + "\n"
+		+ std::to_string(moduleOneMark_) + " " + std::to_string(moduleTwoMark_) + " " + std::to_string(moduleThreeMark_);// + "\n"
+	//	+ std::to_string(yearofStudy_) + " "; //+ std::to_string(moduleOneMark_) + " "	+ std::to_string(moduleTwoMark_) + " " + std::to_string(moduleThreeMark_);
 	std::cout << output;
 }
 
@@ -78,7 +83,7 @@ std::string Student::CalculateClassification() const {
 
 	int average{};
 
-	//average = (moduleOneMark_ + moduleTwoMark_ + moduleThreeMark_) / 3;
+	average = (moduleOneMark_ + moduleTwoMark_ + moduleThreeMark_) / 3;
 	if (average < 40) {
 		return "fail";
 	}

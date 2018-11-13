@@ -27,9 +27,9 @@ private:
 
 	std::vector<Module> moduleMarks_{};
 
-	//int moduleOneMark_;
-	//int moduleTwoMark_;
-	//int moduleThreeMark_;
+	int moduleOneMark_;
+	int moduleTwoMark_;
+	int moduleThreeMark_;
 
 public:
 	//Public member functions
@@ -42,7 +42,7 @@ public:
 	Student(std::string name, std::string registration, std::string course, int yearofStudy);
 
 	Student(std::string name);
-
+	Student::Student(std::string name, std::string registration, std::string course, int yearofStudy, int module1, int module2, int module3);
 	//Getters and setters for each member variable
 	void SetName(std::string name);
 	std::string GetName() const;
